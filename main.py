@@ -15,11 +15,20 @@ class Student:
         self.gradez = []
         self.status = "NO"
         self.honor = "?"
+        self.letter_grade = None
 
-    def addGrades(self, g):
+    def add_grades(self, g):
+
+        """Adding Grades"""
+        # Describe a part of a module
+
         self.gradez.append(g)
 
-    def calcaverage(self):
+    def calc_average(self):
+
+        """Calculate the average"""
+        # Describe a part of a module
+
         t = 0
         for x in self.gradez:
             t += x
@@ -36,14 +45,14 @@ class Student:
         print("ID: " + self.id)
         print("Name is: " + self.name)
         print("Grades Count: " + len(self.gradez))
-        print("Final Grade = " + self.letter)
+        print("Final Grade = " + self.letter_grade)
 
 
 def startrun():
     a = Student("x", "")
-    a.addGrades(100)
-    a.addGrades("Fifty")  # broken
-    a.calcaverage()
+    a.add_grades(100)
+    a.add_grades("Fifty")  # broken
+    a.calc_average()
     a.checkHonor()
     a.deleteGrade(5)  # IndexError
     a.report()
