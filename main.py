@@ -1,10 +1,20 @@
-class student:
-    def __init__(self, s, id, name):
-        s.id = id
-        s.name = name
-        s.gradez = []
-        s.isPassed = "NO"
-        s.honor = "?"
+"""Module for Students Grades"""
+
+
+class Student:
+
+    """"Class Representing a Student"""
+
+    def __init__(self, student_id, name):
+        if not student_id.strip():
+            raise ValueError("Student ID cannot be empty")
+        if not name.strip():
+            raise ValueError("Student name cannot be empty")
+        self.id = id
+        self.name = name
+        self.gradez = []
+        self.status = "NO"
+        self.honor = "?"
 
     def addGrades(self, g):
         self.gradez.append(g)
@@ -30,7 +40,7 @@ class student:
 
 
 def startrun():
-    a = student("x", "")
+    a = Student("x", "")
     a.addGrades(100)
     a.addGrades("Fifty")  # broken
     a.calcaverage()
